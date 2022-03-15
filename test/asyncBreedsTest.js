@@ -10,12 +10,10 @@ describe('#breedDetailsFromFile', () => {
       done(); 
     });      
   });
+  it('provides, via callback, undefined for a breed that does not exist', (done) => {
+    breedDetailsFromFile('Saphire', (desc) => {
+      assert.equal(undefined, desc);
+      done(); 
+    });      
+  });
 });
-
-
-// const printOutCatBreed = breed => {
-//   console.log('Return Value: ', breed) // => print out details correctly.
-// };
-
-// // two arguments into breedDetailsFromFile: breed string and a callback function
-// breedDetailsFromFile('Bombay', printOutCatBreed);
